@@ -1,0 +1,68 @@
+/* Navbar.module.css */
+
+.container {
+  color: black;
+  margin: auto;
+  max-width: 1440px;
+}
+
+.header {
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 88px;
+  padding: 26px 36px;
+  display: flex;
+  color: var(--text-primary-color);
+  position: relative;
+  z-index: 10000;
+}
+
+.desktopMenu {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.headerLinks {
+  display: flex;
+  align-items: center;
+  height: 42px;
+}
+
+.signLink {
+  padding-right: 24px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  cursor: pointer;
+}
+
+.signLink:hover {
+  opacity: 40%;
+}
+
+.headerForm {
+  display: flex;
+  align-items: center;
+}
+
+.navLinks {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  margin-left: 32px;
+  cursor: pointer;
+}
+
+.navLinks:hover {
+  opacity: 40%;
+}
+
+@media (min-width: 998px) {
+  .desktopMenu {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
