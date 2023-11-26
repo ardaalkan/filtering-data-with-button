@@ -1,6 +1,10 @@
 import styles from "./InterviewGuide.module.css";
+// import { useState } from "react";
 
 const InterviewGuide = () => {
+
+  // const [isActive, setIsActive] = useState(false);
+  
   return (
     <div className={styles.container}>
       <div className={styles.main}>
@@ -17,13 +21,32 @@ const InterviewGuide = () => {
               </p>
             </div>
             <div className={styles.interviewCart}>
-              <h3 className={styles.interviewSubtitle}>Start interviewing the right way</h3>  
-              <h3 className={styles.interviewSubtitleDesc}>Want to use one of these interviews? We will get you started as fast as possible</h3>
+              <h3 className={styles.interviewSubtitle}>
+                Start interviewing the right way
+              </h3>
+              <h3 className={styles.interviewSubtitleDesc}>
+                Want to use one of these interviews? We will get you started as
+                fast as possible
+              </h3>
               <div>
                 <a>
-                  <button className={styles.interviewGuideBtn}>Schedule a call</button>
+                  <button className={styles.interviewGuideBtn}>
+                    Schedule a call
+                  </button>
                 </a>
               </div>
+            </div>
+          </div>
+          <div className={styles.interviewGuideFilter}>
+            <p className={styles.interviewFilterParag}>Filter openings</p>
+            <input className={styles.inputComponent} placeholder="Search..." />
+            <p className={styles.interviewFilterParag}>Filter by Skills</p>
+            <div className={styles.interviewTagsContainer}>
+              <button className={styles.interviewTags}>React</button>
+              <button className={styles.interviewTags}>Vue</button>
+              <button className={styles.interviewTags}>Communication</button>
+              <button className={styles.interviewTags}>CSS</button>
+              <button className={styles.interviewTags}>HTML</button>
             </div>
           </div>
         </div>

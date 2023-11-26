@@ -1,5 +1,5 @@
 :root {
-  font-family: Inter,sans-serif;
+  font-family: Inter, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   color: #212c33;
@@ -14,13 +14,18 @@
   --text-primary-color: #212c33;
   --text-secondary-color: #c6cacc;
   --text-color: #ffffff;
-  --color-background: #fff;
+  --color-background: #ffffff;
   --color-dark-background: #343b40;
   --color-accent-background: #505099;
   --color-accent-foreground: #ffffff;
+  --color-border: #e3e5e5;
+  --color-border-subtle: #f0f0f0;
+  --color-panel: #f9f9f9;
+  --color-panel-dark: #212c33;
 }
 
-*, :after :before{
+*,
+:after :before {
   box-sizing: border-box;
 }
 
@@ -31,11 +36,20 @@ body {
   min-height: 100vh;
 }
 
-blockquote, body, dd, dl, figure, h1, h2, h3, h4, p {
+blockquote,
+body,
+dd,
+dl,
+figure,
+h1,
+h2,
+h3,
+h4,
+p {
   margin: 0;
 }
 
-a{
+a {
   text-decoration: none;
   color: inherit;
 }
@@ -45,10 +59,9 @@ a{
   color: var(--color-background);
 }
 
-html {
-  height: 100%;
-}
-
-body {
-  height: 100%;
+button,
+input,
+select,
+textarea {
+  font: inherit;
 }

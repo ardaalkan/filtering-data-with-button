@@ -14,7 +14,7 @@ const Navbar = () => {
           </div>
           <div className={styles.headerForm}>
             <a className={styles.signLink}>Sign In</a>
-            <a className={styles.signLink}>Sign Up</a>
+            <a className={styles.signUpLink}>Sign Up</a>
           </div>
         </div>
       </nav>
