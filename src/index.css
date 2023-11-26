@@ -12,7 +12,12 @@
   --primary-color: #3498db;
   --secondary-color: #2ecc71;
   --text-primary-color: #212c33;
+  --text-secondary-color: #c6cacc;
+  --text-color: #ffffff;
   --color-background: #fff;
+  --color-dark-background: #343b40;
+  --color-accent-background: #505099;
+  --color-accent-foreground: #ffffff;
 }
 
 *, :after :before{
@@ -38,4 +43,12 @@ a{
 ::selection {
   background-color: var(--text-primary-color);
   color: var(--color-background);
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
 }
