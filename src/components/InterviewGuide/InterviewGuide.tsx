@@ -1,10 +1,57 @@
 import styles from "./InterviewGuide.module.css";
-// import { useState } from "react";
+import { useState } from "react";
 
-const InterviewGuide = () => {
+interface ButtonStates {
+  button1: boolean;
+  button2: boolean;
+  button3: boolean;
+}
 
-  // const [isActive, setIsActive] = useState(false);
-  
+const ToggleButtons: React.FC = () => {
+  const [buttonStates, setButtonStates] = useState<ButtonStates>({
+    button1: false,
+    button2: false,
+    button3: false,
+  });
+
+  const toggleButtonColor = (buttonKey: keyof ButtonStates) => {
+    setButtonStates((prevStates) => ({
+      ...prevStates,
+      [buttonKey]: !prevStates[buttonKey],
+    }));
+  };
+
+  return (
+    <div className={styles.interviewTagsContainer}>
+      <button
+        onClick={() => toggleButtonColor("button1")}
+        className={`${
+          buttonStates.button1 ? styles.interviewTags2 : styles.interviewTags
+        }`}
+      >
+        React
+      </button>
+      <button
+        onClick={() => toggleButtonColor("button2")}
+        className={`${
+          buttonStates.button2 ? styles.interviewTags2 : styles.interviewTags
+        }`}
+      >
+        Vue
+      </button>
+      <button
+        onClick={() => toggleButtonColor("button3")}
+        className={`${
+          buttonStates.button3 ? styles.interviewTags2 : styles.interviewTags
+        }`}
+      >
+        Communication
+      </button>
+    </div>
+  );
+};
+
+const InterviewGuide: React.FC = () => {
   return (
     <div className={styles.container}>
       <div className={styles.main}>
@@ -41,13 +88,7 @@ const InterviewGuide = () => {
             <p className={styles.interviewFilterParag}>Filter openings</p>
             <input className={styles.inputComponent} placeholder="Search..." />
             <p className={styles.interviewFilterParag}>Filter by Skills</p>
-            <div className={styles.interviewTagsContainer}>
-              <button className={styles.interviewTags}>React</button>
-              <button className={styles.interviewTags}>Vue</button>
-              <button className={styles.interviewTags}>Communication</button>
-              <button className={styles.interviewTags}>CSS</button>
-              <button className={styles.interviewTags}>HTML</button>
-            </div>
+            <ToggleButtons />
           </div>
         </div>
       </div>
