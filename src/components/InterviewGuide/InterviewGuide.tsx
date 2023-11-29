@@ -90,6 +90,110 @@ const InterviewGuide: React.FC = () => {
             <p className={styles.interviewFilterParag}>Filter by Skills</p>
             <ToggleButtons />
           </div>
+          <div>
+            <ol className={styles.interviewGuideCartGrid}>
+            <a className={styles.interviewGuideCartGridATag}>
+                <div className={styles.interviewGuideCartImg}></div>
+                <div className={styles.interviewContentContainer}>
+                  <h2 className={styles.interviewContentHeader}>
+                    Interface Designer
+                  </h2>
+                  <p className={styles.interviewContentDesc}>
+                    A two-stage interview process for assessing junior,
+                    mid-career, or senior level designers. This process includes
+                    an Interface designer interview, and a designer soft skills
+                    interview.
+                  </p>
+                  <div className={styles.interviewContentStats}>
+                    <div className={styles.interviewContentStat}>
+                      <div>
+                        <span>IMG</span>
+                      </div>
+                      <div>10 skills</div>
+                    </div>
+                    <p className={styles.interviewContentStat}>
+                      <span>IMG</span>2 interviews
+                    </p>
+                  </div>
+                </div>
+              </a>
+              <a className={styles.interviewGuideCartGridATag}>
+                <div className={styles.interviewGuideCartImg}></div>
+                <div className={styles.interviewContentContainer}>
+                  <h2 className={styles.interviewContentHeader}>
+                    Interface Designer
+                  </h2>
+                  <p className={styles.interviewContentDesc}>
+                    A two-stage interview process for assessing junior,
+                    mid-career, or senior level designers. This process includes
+                    an Interface designer interview, and a designer soft skills
+                    interview.
+                  </p>
+                  <div className={styles.interviewContentStats}>
+                    <div className={styles.interviewContentStat}>
+                      <div>
+                        <span>IMG</span>
+                      </div>
+                      <div>10 skills</div>
+                    </div>
+                    <p className={styles.interviewContentStat}>
+                      <span>IMG</span>2 interviews
+                    </p>
+                  </div>
+                </div>
+              </a>
+              <a className={styles.interviewGuideCartGridATag}>
+                <div className={styles.interviewGuideCartImg}></div>
+                <div className={styles.interviewContentContainer}>
+                  <h2 className={styles.interviewContentHeader}>
+                    Interface Designer
+                  </h2>
+                  <p className={styles.interviewContentDesc}>
+                    A two-stage interview process for assessing junior,
+                    mid-career, or senior level designers. This process includes
+                    an Interface designer interview, and a designer soft skills
+                    interview.
+                  </p>
+                  <div className={styles.interviewContentStats}>
+                    <div className={styles.interviewContentStat}>
+                      <div>
+                        <span>IMG</span>
+                      </div>
+                      <div>10 skills</div>
+                    </div>
+                    <p className={styles.interviewContentStat}>
+                      <span>IMG</span>2 interviews
+                    </p>
+                  </div>
+                </div>
+              </a>
+              <a className={styles.interviewGuideCartGridATag}>
+                <div className={styles.interviewGuideCartImg}></div>
+                <div className={styles.interviewContentContainer}>
+                  <h2 className={styles.interviewContentHeader}>
+                    Interface Designer
+                  </h2>
+                  <p className={styles.interviewContentDesc}>
+                    A two-stage interview process for assessing junior,
+                    mid-career, or senior level designers. This process includes
+                    an Interface designer interview, and a designer soft skills
+                    interview.
+                  </p>
+                  <div className={styles.interviewContentStats}>
+                    <div className={styles.interviewContentStat}>
+                      <div>
+                        <span>IMG</span>
+                      </div>
+                      <div>10 skills</div>
+                    </div>
+                    <p className={styles.interviewContentStat}>
+                      <span>IMG</span>2 interviews
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </ol>
+          </div>
         </div>
       </div>
     </div>

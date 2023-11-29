@@ -166,4 +166,70 @@
     text-transform: capitalize;
     letter-spacing: 0.3px;
   }
+  .interviewGuideCartGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 24px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+  }
+  .interviewGuideCartGridATag {
+    background-color: rgb(235, 235, 235);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4px;
+  }
+  .interviewGuideCartImg {
+    position: relative;
+    overflow: hidden;
+    height: 120px;
+    width: 100%;
+    background-size: cover;
+  }
+  .interviewContentContainer {
+    padding: 16px;
+    height: 100%;
+    flex-direction: column;
+    display: flex;
+    background-color: var(--color-background);
+  }
+  .interviewContentHeader {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    color: var(--text-primary-color);
+    margin-bottom: 8px;
+    display: inline-flex;
+    gap: 4px;
+    align-items: center;
+    position: relative;
+  }
+  .interviewContentDesc {
+    font-size: 14px;
+    line-height: 16px;
+    color: var(--text-secondary-color);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+  .interviewContentStats {
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-secondary-color);
+  }
+  .interviewContentStat {
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
+  }
 }
