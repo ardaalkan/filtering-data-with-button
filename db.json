@@ -1,0 +1,128 @@
+{
+  "interview": [
+    {
+      "name": "Interface Designer",
+      "description": "A two-stage interview process for assessing junior, mid-career, or senior level designers.",
+      "skills": "10",
+      "interviewCount": "2",
+      "keys": [
+        "Communication",
+        "Design",
+        "Creative thinking",
+        "Interpersonal relationships",
+        "Proactivity",
+        "Project management",
+        "Self-Awareness",
+        "Stress management",
+        "Teamwork",
+        "User Experience Design (UX)"
+      ]
+    },
+    {
+      "name": "Backend Developer",
+      "description": "A three-stage interview process for assessing junior, mid-career, or senior level backend developer candidates. This flow includes interviews for evaluating soft skills, technical skills, as well as architecture skills.",
+      "skills": "9",
+      "interviewCount": "3",
+      "keys": [
+        "API Design",
+        "Communication",
+        "Engineering",
+        "Programming",
+        "SQL",
+        "Engineering Management",
+        "Incident Management",
+        "Programming Concepts",
+        "Software Architecture"
+      ]
+    },
+    {
+      "name": "React Frontend Developer",
+      "description": "A three-stage interview process for assessing junior, mid-career, or senior level frontend developer candidates with a focus on React. This flow includes interviews for evaluating soft skills, React skills, as well as architecture skills.",
+      "skills": "9",
+      "interviewCount": "3",
+      "keys": [
+        "Communication",
+        "Engineering",
+        "JavaScript",
+        "JavaScript Frameworks",
+        "Agile Product Development",
+        "Analytical thinking",
+        "API Design",
+        "CSS Frameworks",
+        "Engineering Management"
+      ]
+    },
+    {
+      "name": "Vue Frontend Developer",
+      "description": "A three-stage interview process for assessing junior, mid-career, or senior level frontend developer candidates. This flow includes interviews for evaluating soft skills, technical skills, as well as architecture skills.",
+      "skills": "9",
+      "interviewCount": "3",
+      "keys": [
+        "JavaScript Frameworks",
+        "Communication",
+        "Engineering",
+        "Agile Product Development",
+        "Analytical thinking",
+        "API Design",
+        "CSS Frameworks",
+        "Engineering Management",
+        "JavaScript"
+      ]
+    },
+    {
+      "name": "Frontend Developer",
+      "description": "A three-stage interview process for assessing junior, mid-career, or senior level frontend developer candidates. This flow includes interviews for evaluating soft skills, technical skills, as well as architecture skills.",
+      "skills": "12",
+      "interviewCount": "3",
+      "keys": [
+        "Engineering",
+        "Communication",
+        "ECMAScript 2015",
+        "API Design",
+        "CSS Frameworks",
+        "Agile Product Development",
+        "Analytical thinking",
+        "Engineering Management",
+        "HTML5",
+        "JavaScript Frameworks",
+        "Jest (JavaScript Testing Framework)",
+        "Web Deployment"
+      ]
+    },
+    {
+      "name": "Customer Success Manager",
+      "description": "This interview flow for hiring a Customer Success Manager focuses on evaluating the job-related technical and soft skills of CSM candidates. It has three stages and includes evaluation guidelines so that anyone can use it.",
+      "skills": "7",
+      "interviewCount": "3",
+      "keys": [
+        "Engineering",
+        "Communication",
+        "ECMAScript 2015",
+        "API Design",
+        "CSS Frameworks",
+        "Agile Product Development",
+        "Analytical thinking",
+        "Engineering Management",
+        "HTML5",
+        "JavaScript Frameworks",
+        "Jest (JavaScript Testing Framework)",
+        "Web Deployment"
+      ]
+    },
+    {
+      "name": "Talent Acquisition Specialist",
+      "description": "This is a 2-stage interview flow for hiring a Talent Acquisition Specialist. It focuses on evaluating the important technical skills, as well as culture fit with the organization and the team that they are being considered for.",
+      "skills": "8",
+      "interviewCount": "2",
+      "keys": [
+        "Motivation",
+        "Customer Relationship Management",
+        "Analytical thinking",
+        "Communication",
+        "Planning and organizing",
+        "Problem-solving",
+        "Teamwork"
+      ]
+    }
+  ]
+}
