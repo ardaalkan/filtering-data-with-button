@@ -52,26 +52,29 @@ const ToggleButtons: React.FC = () => {
 };
 
 const InterviewGuide: React.FC = () => {
-  const [data, setData] = useState<string | null>(null);
-
+  const [data, setData] = useState<any[]>([]);
+  const [search, setSearch] = useState<string | null>(null);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:3000/interview");
+        const response = await fetch("http://localhost:3001/interview");
         if (!response.ok) {
           throw new Error("Network error");
         }
         const result = await response.json();
-        console.log(result, 'result');
+        console.log(result, "result");
         setData(result);
         console.log(data);
       } catch (error) {
         console.log(error);
       }
     };
-
     fetchData();
   }, []);
+
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearch(e.target.value.toLocaleLowerCase());
+  };
 
   return (
     <div className={styles.container}>
@@ -107,37 +110,47 @@ const InterviewGuide: React.FC = () => {
           </div>
           <div className={styles.interviewGuideFilter}>
             <p className={styles.interviewFilterParag}>Filter openings</p>
-            <input className={styles.inputComponent} placeholder="Search..." />
+            <input
+              className={styles.inputComponent}
+              placeholder="Search..."
+              onChange={handleSearchChange}
+            />
             <p className={styles.interviewFilterParag}>Filter by Skills</p>
             <ToggleButtons />
           </div>
           <div>
             <ol className={styles.interviewGuideCartGrid}>
-              <a className={styles.interviewGuideCartGridATag}>
-                <div className={styles.interviewGuideCartImg}></div>
-                <div className={styles.interviewContentContainer}>
-                  <h2 className={styles.interviewContentHeader}>
-                    Interface Designer
-                  </h2>
-                  <p className={styles.interviewContentDesc}>
-                    A two-stage interview process for assessing junior,
-                    mid-career, or senior level designers. This process includes
-                    an Interface designer interview, and a designer soft skills
-                    interview.
-                  </p>
-                  <div className={styles.interviewContentStats}>
-                    <div className={styles.interviewContentStat}>
-                      <span>
-                        <p>IMG</p>
-                      </span>
-                      <div>10 skills</div>
+              {data.filter((item: string) => {
+                  return (
+                    !search || item.name.toLowerCase().includes(search)
+                  )}).map((interview: any) => (
+                  <a
+                    key={interview.name}
+                    className={styles.interviewGuideCartGridATag}
+                  >
+                    <div className={styles.interviewGuideCartImg}></div>
+                    <div className={styles.interviewContentContainer}>
+                      <h2 className={styles.interviewContentHeader}>
+                        {interview.name}
+                      </h2>
+                      <p className={styles.interviewContentDesc}>
+                        {interview.description}
+                      </p>
+                      <div className={styles.interviewContentStats}>
+                        <div className={styles.interviewContentStat}>
+                          <span>
+                            <p>IMG</p>
+                          </span>
+                          <div>{interview.skills}</div>
+                        </div>
+                        <p className={styles.interviewContentStat}>
+                          <span>IMG</span>
+                          {interview.inteviewCount}
+                        </p>
+                      </div>
                     </div>
-                    <p className={styles.interviewContentStat}>
-                      <span>IMG</span>2 interviews
-                    </p>
-                  </div>
-                </div>
-              </a>
+                  </a>
+                ))}
             </ol>
           </div>
         </div>
