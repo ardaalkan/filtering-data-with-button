@@ -1,59 +1,38 @@
 import styles from "./InterviewGuide.module.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
+import debouce from "lodash.debounce";
+
+interface InterviewGuide {
+  name: string;
+  description: string;
+  interviewCount: number;
+  keys: string[];
+  skills: string;
+}
 
 interface ButtonStates {
   button1: boolean;
   button2: boolean;
   button3: boolean;
+  [key: string]: boolean;
 }
 
-const ToggleButtons: React.FC = () => {
+const buttonConfigs = [
+  { key: "Teamwork", text: "Teamwork" },
+  { key: "Engineering", text: "Engineering" },
+  { key: "Communication", text: "Communication" },
+];
+
+const InterviewGuide: React.FC = () => {
+  const [data, setData] = useState<InterviewGuide[]>([]);
+  const [search, setSearch] = useState<string | null>(null);
+  const [filteredData, setFilteredData] = useState<InterviewGuide[]>([]);
   const [buttonStates, setButtonStates] = useState<ButtonStates>({
     button1: false,
     button2: false,
     button3: false,
   });
 
-  const toggleButtonColor = (buttonKey: keyof ButtonStates) => {
-    setButtonStates((prevStates) => ({
-      ...prevStates,
-      [buttonKey]: !prevStates[buttonKey],
-    }));
-  };
-
-  return (
-    <div className={styles.interviewTagsContainer}>
-      <button
-        onClick={() => toggleButtonColor("button1")}
-        className={`${
-          buttonStates.button1 ? styles.interviewTags2 : styles.interviewTags
-        }`}
-      >
-        React
-      </button>
-      <button
-        onClick={() => toggleButtonColor("button2")}
-        className={`${
-          buttonStates.button2 ? styles.interviewTags2 : styles.interviewTags
-        }`}
-      >
-        Vue
-      </button>
-      <button
-        onClick={() => toggleButtonColor("button3")}
-        className={`${
-          buttonStates.button3 ? styles.interviewTags2 : styles.interviewTags
-        }`}
-      >
-        Communication
-      </button>
-    </div>
-  );
-};
-
-const InterviewGuide: React.FC = () => {
-  const [data, setData] = useState<any[]>([]);
-  const [search, setSearch] = useState<string | null>(null);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -72,9 +51,49 @@ const InterviewGuide: React.FC = () => {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    if (search) {
+      const filtered = data.filter((item) =>
+        item.name.toLowerCase().includes(search)
+      );
+      setFilteredData(filtered);
+    } else {
+      setFilteredData(data);
+    }
+  }, [search, data, buttonStates]);
+
+  useEffect(() => {
+    const selectedKeys = Object.keys(buttonStates).filter(
+      (key) => buttonStates[key as keyof ButtonStates]
+    );
+    if (selectedKeys.length === 0) {
+      setFilteredData(data);
+      return;
+    } else {
+      const filteredKey = data.filter((item) => {
+        return selectedKeys.every((selectedKey) =>
+          item.keys.includes(selectedKey)
+        );
+      });
+      setFilteredData(filteredKey);
+    }
+    console.log(selectedKeys, "selected");
+  }, [buttonStates, data]);
+
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value.toLocaleLowerCase());
   };
+
+  const toggleButtonColor = (buttonKey: keyof ButtonStates) => {
+    setButtonStates((prevStates) => ({
+      ...prevStates,
+      [buttonKey]: !prevStates[buttonKey],
+    }));
+  };
+
+  const debouncedResults = useMemo(() => {
+    return debouce(handleSearchChange, 300);
+  }, []);
 
   return (
     <div className={styles.container}>
@@ -113,44 +132,55 @@ const InterviewGuide: React.FC = () => {
             <input
               className={styles.inputComponent}
               placeholder="Search..."
-              onChange={handleSearchChange}
+              onChange={debouncedResults}
             />
             <p className={styles.interviewFilterParag}>Filter by Skills</p>
-            <ToggleButtons />
+            <div className={styles.interviewTagsContainer}>
+              {buttonConfigs.map((buttonConfig) => (
+                <button
+                  key={buttonConfig.key}
+                  onClick={() => toggleButtonColor(buttonConfig.key)}
+                  className={`${
+                    buttonStates[buttonConfig.key]
+                      ? styles.interviewTags2
+                      : styles.interviewTags
+                  }`}
+                >
+                  {buttonConfig.text}
+                </button>
+              ))}
+            </div>
           </div>
           <div>
             <ol className={styles.interviewGuideCartGrid}>
-              {data.filter((item: string) => {
-                  return (
-                    !search || item.name.toLowerCase().includes(search)
-                  )}).map((interview: any) => (
-                  <a
-                    key={interview.name}
-                    className={styles.interviewGuideCartGridATag}
-                  >
-                    <div className={styles.interviewGuideCartImg}></div>
-                    <div className={styles.interviewContentContainer}>
-                      <h2 className={styles.interviewContentHeader}>
-                        {interview.name}
-                      </h2>
-                      <p className={styles.interviewContentDesc}>
-                        {interview.description}
-                      </p>
-                      <div className={styles.interviewContentStats}>
-                        <div className={styles.interviewContentStat}>
-                          <span>
-                            <p>IMG</p>
-                          </span>
-                          <div>{interview.skills}</div>
-                        </div>
-                        <p className={styles.interviewContentStat}>
-                          <span>IMG</span>
-                          {interview.inteviewCount}
-                        </p>
+              {filteredData.map((interview: InterviewGuide) => (
+                <a
+                  key={interview.name}
+                  className={styles.interviewGuideCartGridATag}
+                >
+                  <div className={styles.interviewGuideCartImg}></div>
+                  <div className={styles.interviewContentContainer}>
+                    <h2 className={styles.interviewContentHeader}>
+                      {interview.name}
+                    </h2>
+                    <p className={styles.interviewContentDesc}>
+                      {interview.description}
+                    </p>
+                    <div className={styles.interviewContentStats}>
+                      <div className={styles.interviewContentStat}>
+                        <span>
+                          <p>IMG</p>
+                        </span>
+                        <div>{interview.skills}</div>
                       </div>
+                      <p className={styles.interviewContentStat}>
+                        <span>IMG</span>
+                        {interview.interviewCount}
+                      </p>
                     </div>
-                  </a>
-                ))}
+                  </div>
+                </a>
+              ))}
             </ol>
           </div>
         </div>

@@ -1,0 +1,236 @@
+@media (min-width: 998px) {
+    .desktopMenu {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+  
+    .container {
+      height: 100vh;
+      padding: 26px;
+    }
+  
+    .main {
+      width: 900px;
+      height: 100vh;
+      margin: auto;
+      background-color: rgb(255, 255, 255);
+    }
+  
+    .interviewContainer {
+      padding: 26px;
+    }
+  
+    .interviewHeader {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 24px;
+      gap: 24px;
+    }
+  
+    .interviewTitleContainer {
+      flex: 1 1;
+      position: relative;
+    }
+  
+    .interviewTitleDesc {
+      font-size: 54px;
+      font-weight: 600;
+      line-height: 60px;
+      margin-bottom: 12px;
+    }
+  
+    .interviewParag {
+      font-size: 16px;
+      color: #778085;
+      letter-spacing: 0.015em;
+    }
+  
+    .interviewCart {
+      box-sizing: border-box;
+      width: 50%;
+      margin-bottom: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 24px;
+      border-radius: 8px;
+      background-color: var(--color-dark-background);
+      padding: 24px;
+    }
+  
+    .interviewSubtitle {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: var(--text-secondary-color);
+    }
+  
+    .interviewSubtitleDesc {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 24px;
+      line-height: 28px;
+      color: var(--text-color);
+    }
+  
+    .interviewGuideBtn {
+      background: var(--color-accent-background);
+      outline: none;
+      border: none;
+      color: var(--color-accent-foreground);
+      padding: 8px 24px;
+      border-radius: 6px;
+      font-weight: 500;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+    }
+    .imgStyle {
+      position: absolute;
+      inset: 0px;
+      box-sizing: border-box;
+      padding: 0px;
+      border: none;
+      margin: auto;
+      display: block;
+      width: 0px;
+      height: 0px;
+      min-width: 100%;
+      max-width: 100%;
+      min-height: 100%;
+      max-height: 100%;
+    }
+  
+    .interviewGuideFilter {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 24px;
+      border: 1px solid var(--color-border);
+      padding: 24px;
+      border-radius: 12px;
+      background-color: var(--color-border-subtle);
+    }
+    .inputComponent {
+      border: none;
+      outline: none;
+      padding: 4px 16px;
+      color: var(--text-primary-color);
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      margin-bottom: 12px;
+      background-color: var(--color-accent-foreground);
+    }
+    .inputComponent::placeholder {
+      font-size: 15px;
+      letter-spacing: 0.3px;
+    }
+    .interviewFilterParag {
+      font-size: 14px;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+    .interviewTagsContainer {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .interviewTags {
+      color: var(--text-primary-color);
+      cursor: pointer;
+      outline: none;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      padding: 4px 8px;
+      background-color: var(--color-panel);
+      transition: all 0.15s ease-in-out;
+      font-weight: 500;
+      font-size: 12px;
+      text-transform: capitalize;
+      letter-spacing: 0.3px;
+    }
+    .interviewTags2 {
+      color: var(--text-color);
+      cursor: pointer;
+      outline: none;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      padding: 4px 8px;
+      background-color: var(--color-panel-dark);
+      transition: all 0.15s ease-in-out;
+      font-weight: 500;
+      font-size: 12px;
+      text-transform: capitalize;
+      letter-spacing: 0.3px;
+    }
+    .interviewGuideCartGrid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 24px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      width: 100%;
+    }
+    .interviewGuideCartGridATag {
+      background-color: rgb(235, 235, 235);
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 4px;
+    }
+    .interviewGuideCartImg {
+      position: relative;
+      overflow: hidden;
+      height: 120px;
+      width: 100%;
+      background-size: cover;
+    }
+    .interviewContentContainer {
+      padding: 16px;
+      height: 100%;
+      flex-direction: column;
+      display: flex;
+      background-color: var(--color-background);
+    }
+    .interviewContentHeader {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      color: var(--text-primary-color);
+      margin-bottom: 8px;
+      display: inline-flex;
+      gap: 4px;
+      align-items: center;
+      position: relative;
+    }
+    .interviewContentDesc {
+      font-size: 14px;
+      line-height: 16px;
+      color: var(--text-secondary-color);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+    .interviewContentStats {
+      display: flex;
+      align-items: center;
+      margin-top: auto;
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text-secondary-color);
+    }
+    .interviewContentStat {
+      margin-right: 8px;
+      display: flex;
+      align-items: center;
+    }
+  }
+  
