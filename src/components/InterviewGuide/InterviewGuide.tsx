@@ -1,6 +1,7 @@
 import styles from "./InterviewGuide.module.css";
 import { useState, useEffect, useMemo } from "react";
 import debouce from "lodash.debounce";
+import Button from "../ToggleButtons/ToggleButtons";
 
 interface InterviewGuide {
   name: string;
@@ -68,7 +69,6 @@ const InterviewGuide: React.FC = () => {
     );
     if (selectedKeys.length === 0) {
       setFilteredData(data);
-      return;
     } else {
       const filteredKey = data.filter((item) => {
         return selectedKeys.every((selectedKey) =>
@@ -137,17 +137,12 @@ const InterviewGuide: React.FC = () => {
             <p className={styles.interviewFilterParag}>Filter by Skills</p>
             <div className={styles.interviewTagsContainer}>
               {buttonConfigs.map((buttonConfig) => (
-                <button
+                <Button
                   key={buttonConfig.key}
+                  label={buttonConfig.text}
+                  isActive={buttonStates[buttonConfig.key]}
                   onClick={() => toggleButtonColor(buttonConfig.key)}
-                  className={`${
-                    buttonStates[buttonConfig.key]
-                      ? styles.interviewTags2
-                      : styles.interviewTags
-                  }`}
-                >
-                  {buttonConfig.text}
-                </button>
+                />
               ))}
             </div>
           </div>
